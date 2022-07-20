@@ -23,7 +23,7 @@ public class App {
         // exibir e manipular os dados
         var generator = new StickerGenerator();
         for (Map<String, String> filme : listaFilmes) {
-            String imageUrl = filme.get("image");
+            String imageUrl = filme.get("image").replaceAll("(@+)(.*).jpg$", "$1.jpg");
             String title = filme.get("title");
             String outputImageFileName = title + ".jpg";
 
